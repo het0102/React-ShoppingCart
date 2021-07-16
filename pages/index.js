@@ -10,7 +10,6 @@ export default function Home(props) {
       />
 
       <ProductList
-        products={props.products}
         products_jewelery={props.products_jewelery}
         products_electronics={props.products_electronics}
         products_men={props.products_men}
@@ -21,7 +20,7 @@ export default function Home(props) {
 }
 
 export const getServerSideProps = async () => {
-  const all = await fetch(`https://fakestoreapi.com/products`);
+  //const all = await fetch(`https://fakestoreapi.com/products`);
   const jew = await fetch(
     `https://fakestoreapi.com/products/category/jewelery`
   );
@@ -35,7 +34,7 @@ export const getServerSideProps = async () => {
     `https://fakestoreapi.com/products/category/women's clothing`
   );
 
-  const products = await all.json();
+  //const products = await all.json();
   const products_jewelery = await jew.json();
   const products_electronics = await ele.json();
   const products_men = await men.json();
@@ -43,7 +42,6 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      products,
       products_jewelery,
       products_electronics,
       products_men,

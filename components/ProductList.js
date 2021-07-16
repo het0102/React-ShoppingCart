@@ -11,7 +11,7 @@ const ProductList = (props) => {
       <Tabs className="mt-3" defaultActiveKey="all" id="uncontrolled-tab-example">
         <Tab eventKey="categories" title="Categories : " disabled></Tab>
         <Tab eventKey="all" title="All">
-          <All products={props.products} />
+          <All />
         </Tab>
         <Tab eventKey="men's clothing" title="Men's clothing">
           <Mens products_men={props.products_men} />
